@@ -164,7 +164,9 @@
 
 {#each myRecords as record}
     <div class="resume grid grid-cols-4 max-w-6xl mx-auto my-1 p-6">
-        <div class=" col-span-4 text-left text-2xl uppercase font-extrabold">
+        <div
+            class=" col-span-4 text-left text-2xl md:text-xl uppercase font-extrabold"
+        >
             {record.full_name}
         </div>
         <div class="col-span-4 text-left">
@@ -204,15 +206,15 @@
                 /></a
             >
         </div>
-        <div class="grid grid-flow-col gap-1">
-            <a href={record.linkedin_url} class="w-12 ml-1">
+        <div class="grid grid-flow-col gap-1 md:text-md">
+            <a target="_blank" href={record.linkedin_url} class="w-12 ml-1">
                 <img
                     src="/feather/linkedin.svg"
                     alt=""
                     class="w-12 h-12 p-2 bg-slate-200 mt-4 rounded-xl"
                 />
             </a>
-            <a href={record.facebook_url} class="w-12 ml-1">
+            <a target="_blank" href={record.facebook_url} class="w-12 ml-1">
                 <img
                     src="/feather/facebook.svg"
                     alt=""
@@ -229,7 +231,7 @@
         </div>
 
         <div
-            class="bg-slate-200 p-2 rounded-lg col-span-4 text-left uppercase text-xl mt-4 font-bold"
+            class="bg-slate-200 p-2 rounded-lg col-span-4 text-left uppercase text-md md:text-sm mt-4 font-bold"
         >
             Summary
         </div>
@@ -237,14 +239,14 @@
             {record.summary}
         </div>
         <div
-            class="bg-slate-200 p-2 rounded-lg  col-span-4 text-left uppercase text-xl mt-4 font-bold"
+            class="bg-slate-200 p-2 rounded-lg  col-span-4 text-left uppercase text-md mt-4 font-bold md:text-md"
         >
             Experience
         </div>
         {#each jobs as job}
             <div class="my-1 col-span-4">
                 <div
-                    class="bg-slate-50 p-2 rounded-lg col-span-4 text-left text-xl my-1 uppercase italic font-bold"
+                    class="bg-slate-50 p-2 rounded-lg col-span-4 text-left text-sm my-1 uppercase italic font-bold"
                 >
                     {job.company}
                 </div>
@@ -260,7 +262,7 @@
                     >
                 </div>
 
-                <div class="col-span-4 text-justify text-md my-1 font-semibold">
+                <div class="col-span-4 text-justify text-sm my-1 font-semibold">
                     <p>{job.position_description}</p>
                 </div>
                 <div class="mx-auto max-w-2xl my-2">
@@ -270,10 +272,10 @@
                         class="mx-auto"
                     />
                 </div>
-                <div class="col-span-4 text-justify text-md my-1">
+                <div class="col-span-4 text-justify text-sm my-1">
                     <p>{job.job_duties}</p>
                 </div>
-                <div class="col-span-4 text-justify text-md my-1">
+                <div class="col-span-4 text-justify text-sm my-1">
                     <p>{job.skills ? job.skills : ""}</p>
                 </div>
             </div>
