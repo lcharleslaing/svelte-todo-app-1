@@ -6,3 +6,5 @@ node_modules
 .env
 .env.*
 !.env.example
+index copy.svelte
+index_base.svelte

@@ -191,18 +191,6 @@
         text-align: center;
     }
 
-    .divider {
-        border-top: 1px solid;
-    }
-
-    .float-left {
-        float: left;
-    }
-
-    .float-right {
-        float: right;
-    }
-
     /* media queries */
     @media print {
         .container {
