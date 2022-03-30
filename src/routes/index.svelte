@@ -5,10 +5,7 @@
 </script>
 
 <script>
-    import { supabase, supabaseService } from "$lib/db.js"; // TODO: Fix - $lib
-
-    const anon = supabase;
-    const admin = supabaseService;
+    import supabase from "$lib/db.js"; // TODO: Fix - $lib
 
     // Database
     // TODO: remove "supabaseService" import
@@ -18,7 +15,7 @@
     // Store
     import { writable } from "svelte/store";
 
-    export const user = writable(anon.auth.user() || false); // TODO: => "supabase"
+    export const user = writable(supabase.auth.user() || false); // TODO: => "supabase"
 
     let skills = [];
     // Variables
@@ -37,7 +34,7 @@
     });
     const getAllRecords = async () => {
         try {
-            let { data, error } = await anon // TODO: => "supabase"
+            let { data, error } = await supabase // TODO: => "supabase"
                 .from(dbName)
                 .select("*")
                 .order("created_at", { ascending: false });
@@ -56,7 +53,7 @@
     export let jobs = [];
     const getAllExperiences = async () => {
         try {
-            let { data, error } = await anon // TODO: => "supabase"
+            let { data, error } = await supabase // TODO: => "supabase"
                 .from("resume-experience")
                 .select("*")
                 .order("startdate", { ascending: false });
@@ -70,7 +67,7 @@
     export let schools = [];
     const getAllEducation = async () => {
         try {
-            let { data, error } = await anon // TODO: => "supabase"
+            let { data, error } = await supabase // TODO: => "supabase"
                 .from("resume-education")
                 .select("*")
                 .order("graduation", { ascending: false });
@@ -87,7 +84,7 @@
     };
     const addNewRecord = async () => {
         try {
-            const { data, error } = await anon // TODO: => "supabase"
+            const { data, error } = await supabase // TODO: => "supabase"
                 .from(dbName)
                 .insert(insert);
             await getAllRecords();
@@ -98,7 +95,7 @@
     };
     const updateTodo = async (record) => {
         try {
-            const { data, error } = await anon // TODO: => "supabase"
+            const { data, error } = await supabase // TODO: => "supabase"
                 .from(dbName)
                 .update(update)
                 .eq("id", record.id);
@@ -109,7 +106,7 @@
     };
     const deleteTodo = async (record) => {
         try {
-            const { data, error } = await admin // TODO: => "supabase"
+            const { data, error } = await supabase // TODO: => "supabase"
                 .from(dbName)
                 .delete()
                 .eq("id", record.id);
