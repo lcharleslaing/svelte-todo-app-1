@@ -1,7 +1,7 @@
 <script>
-	import '../app.sass';
+  import "../app.css";
+  import "../global.css";
+  import "../print.css";
 </script>
 
-<div class="primary-inverse">
-	<slot />
-</div>
+<slot />
