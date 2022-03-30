@@ -1,16 +1,14 @@
 <script context="module">
+    import supabase from "$lib/db.js"; // TODO: Fix - $lib
+
     const printResume = () => {
         window.print();
     };
 </script>
 
 <script>
-    import supabase from "$lib/db.js"; // TODO: Fix - $lib
-
     // Database
-    // TODO: remove "supabaseService" import
     import { onMount } from "svelte";
-    import { src_url_equal } from "svelte/internal";
 
     // Store
     import { writable } from "svelte/store";
