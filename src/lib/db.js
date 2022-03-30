@@ -10,4 +10,4 @@ export const supabaseService = createClient(supabaseUrl, serviceKey);
 // @ts-ignore
 export const getServiceSupabase = () => createClient(supabaseUrl, serviceKey);
 
-export default supabaseService;
+export default supabase;
