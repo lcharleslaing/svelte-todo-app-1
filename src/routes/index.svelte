@@ -131,9 +131,9 @@
         let years = Math.floor(months / 12);
         // return in months unless month is greater than 12 then return in years and months
         if (years > 0) {
-            return `${years} years and ${months % 12} months`;
+            return `${years} yrs - ${months % 12} mo`;
         } else if (months > 0) {
-            return `${months} months`;
+            return `${months} m`;
         } else {
             return `${days} days`;
         }
@@ -260,6 +260,7 @@
                     <span class="text-xs italic"
                         >({calculateDuration(job.startdate, job.enddate)})</span
                     >
+                    <span>{formatDate(job.enddate)}</span>
                 </div>
 
                 <div class="col-span-4 text-justify text-sm my-1 font-semibold">
